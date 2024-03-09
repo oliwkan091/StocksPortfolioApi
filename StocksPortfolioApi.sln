@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksService", "StocksServ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Api", "StocksPortfolio.Api\StocksPortfolio.Api.csproj", "{CE6E497A-266D-4A63-8B37-C7F16547D784}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Core", "StocksPortfolio.Core\StocksPortfolio.Core.csproj", "{A7BA7161-1A0C-433C-8CEB-94848795E387}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Web", "StocksPortfolio.Core\StocksPortfolio.Web.csproj", "{A7BA7161-1A0C-433C-8CEB-94848795E387}"
 	ProjectSection(ProjectDependencies) = postProject
 		{CE6E497A-266D-4A63-8B37-C7F16547D784} = {CE6E497A-266D-4A63-8B37-C7F16547D784}
 	EndProjectSection
