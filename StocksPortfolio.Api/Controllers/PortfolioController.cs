@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using System.Text.Json;
 
-namespace StocksPortfolio.Controllers
+namespace StocksPortfolio.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
