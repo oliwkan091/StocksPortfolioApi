@@ -42,5 +42,30 @@ namespace StocksPortfolio.Infrastructure.Services
             return _mapper.Map<List<PortfolioCollection>, List<PortfolioViewModel>>(portfolioCollectionList);
         }
 
+        public void SoftDeletePortfolio(ObjectId id)
+        {
+            if (GetPortfolioByIdThatIsNotSoftDeleted(id) == null)
+            {
+                throw new NullReferenceException(ExceptionCodes.portfolioDoesNotExist);
+            }
+
+            var filter1 = Builders<PortfolioCollection>.Filter.Eq(doc => doc.Id, id);
+            var filter2 = Builders<PortfolioCollection>.Filter.Eq(doc => doc.IsDeleted, false);
+            var filterCombined = Builders<PortfolioCollection>.Filter.And(filter1, filter2);
+            var update = Builders<PortfolioCollection>.Update.Set(portfolio => portfolio.IsDeleted, true);
+            var result = _portfolioCollection.UpdateOne(filterCombined, update);
+
+            if (result.ModifiedCount != 1)
+                throw new Exception(ExceptionCodes.errorWhileDeletingPortfolio);
+
+            Save();
+        }
+
+        private void Save()
+        {
+            string rootProjectDirectoryPath = Directory.GetParent(Environment.CurrentDirectory).FullName;
+            var absolutePathToFile = Path.Combine(rootProjectDirectoryPath, Path.Combine(_mongoDbSettings.Value.PortfolioSaveString));
+            _runner.Export(_mongoDbSettings.Value.PortfolioName, _mongoDbSettings.Value.PortfolioCollectionName, absolutePathToFile);
+        }
     }
 }
