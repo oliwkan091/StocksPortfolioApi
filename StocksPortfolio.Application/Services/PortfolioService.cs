@@ -43,5 +43,53 @@ namespace StocksPortfolio.Application.Services
                 throw new NullReferenceException(ExceptionCodes.portfolioDoesNotExist);
             return portfolio;
         }
+
+
+        public decimal GetTotalPortfolioValue(PortfolioCollection portfolio, string currency, CurrencyViewModel currencyData)
+        {
+            if (portfolio == null)
+                throw new NullReferenceException(ExceptionCodes.portfolioDoesNotExist);
+
+            if (currency == null)
+                throw new NullReferenceException(ExceptionCodes.currencyDoesNotExist);
+
+            if (!currency.Equals(Currencies.Usd) && !currencyData.Quotes.ContainsKey(Currencies.Usd + currency)) 
+                throw new Exception(ExceptionCodes.currencyNotSupported);
+
+            var totalAmount = 0m;
+            foreach (var stock in portfolio.Stocks)
+            {
+                if (stock.Currency == currency)
+                {
+                    totalAmount += _stocksService.GetStockPrice(stock.Ticker).Result.Price * stock.NumberOfShares;
+                }
+                else
+                {
+                    var stockPrice = _stocksService.GetStockPrice(stock.Ticker).Result.Price;
+                    decimal sharesInUsd = 0;
+                    if(stock.Currency == Currencies.Usd)
+                    {
+                        sharesInUsd = stockPrice * stock.NumberOfShares;
+                    }
+                    else
+                    {
+                        var rateUsd = currencyData.Quotes[Currencies.Usd + stock.Currency];
+                        sharesInUsd = (1 / rateUsd) * stockPrice * stock.NumberOfShares;
+                    }
+
+                    if (currency == Currencies.Usd)
+                    {
+                        totalAmount += sharesInUsd;
+                    }else
+                    {
+                        var toGivenCurrency = currencyData.Quotes[Currencies.Usd + currency];
+                        totalAmount += sharesInUsd * toGivenCurrency;
+                    }
+                }
+            }
+
+            return totalAmount;
+        }
+
     }
 }

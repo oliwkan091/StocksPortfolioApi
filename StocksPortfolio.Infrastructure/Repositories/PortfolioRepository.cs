@@ -35,5 +35,12 @@ namespace StocksPortfolio.Infrastructure.Services
             var portfolioCollection = _portfolioCollection.Find(portfolio => (portfolio.Id == objectId && portfolio.IsDeleted == false)).SingleOrDefault();
             return _mapper.Map<PortfolioCollection, PortfolioViewModel>(portfolioCollection);
         }
+
+        public List<PortfolioViewModel> GetAllPortfoliosThatAreNotSoftDeleted()
+        {
+            var portfolioCollectionList = _portfolioCollection.Find(portfolio => portfolio.IsDeleted == false).ToList();
+            return _mapper.Map<List<PortfolioCollection>, List<PortfolioViewModel>>(portfolioCollectionList);
+        }
+
     }
 }

@@ -4,8 +4,6 @@ using MongoDB.Bson;
 using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Enums;
 using StocksPortfolio.Application.Interfaces.Interfaces;
-using StocksPortfolio.Stocks;
-using System.Text.Json;
 
 namespace StocksPortfolio.Api.Controllers
 {
@@ -39,44 +37,13 @@ namespace StocksPortfolio.Api.Controllers
         }
 
         [HttpGet("/value")]
-        public IActionResult GetTotalPortfolioValue(string portfolioId, string currency = "USD")
+        public async Task<IActionResult> GetTotalPortfolioValue(string portfolioId, string currency = Currencies.Usd)
         {
-            var portfolio = _dataService.GetPortfolio(ObjectId.Parse(portfolioId)).Result;
-            var totalAmount = 0m;
-            var stockService = new StocksService.StocksService();
-            var apiAccessKey = "78c057e28b2abf54f48110356bb9d1ce";
-            using (var httpClient = new HttpClient { BaseAddress = new Uri("http://api.currencylayer.com/") })
-            {
-                // Docs: https://currencylayer.com/documentation
-                var foo = httpClient.GetAsync($"live?access_key={apiAccessKey}").Result;
-                var data = JsonSerializer.DeserializeAsync<Quote>(foo.Content.ReadAsStream()).Result;
-
-                foreach (var stock in portfolio.Stocks)
-                {
-                    if (stock.Currency == currency)
-                    {
-                        totalAmount += stockService.GetStockPrice(stock.Ticker).Result.Price * stock.NumberOfShares;
-                    }
-                    else
-                    {
-                        if (currency == "USD")
-                        {
-                            var stockPrice = stockService.GetStockPrice(stock.Ticker).Result.Price;
-                            var rateUsd = data.quotes["USD" + stock.Currency];
-                            totalAmount += stockPrice / rateUsd * stock.NumberOfShares;
-                        }
-                        else
-                        {
-                            var stockPrice = stockService.GetStockPrice(stock.Ticker).Result.Price;
-                            var rateUsd = data.quotes["USD" + stock.Currency];
-                            var amount = stockPrice / rateUsd * stock.NumberOfShares;
-                            var targetRateUsd = data.quotes["USD" + currency];
-                            totalAmount += amount * targetRateUsd;
-                        }
-                    }
-                }
-            }
-
+            var portfolio = _portfolioService.GetPortfolio(portfolioId);
+            await _currencyService.UpdateCurrentCurrencyExchangeData();
+            var currencyData = _currencyService.GetCurrencyExchangeData();
+            var portfolioViewModel = _mapper.Map<PortfolioViewModel, PortfolioCollection>(portfolio);
+            var totalAmount = _portfolioService.GetTotalPortfolioValue(portfolioViewModel, currency, currencyData);
             return Ok(totalAmount);
         }
 
