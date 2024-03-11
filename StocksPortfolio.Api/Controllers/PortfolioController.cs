@@ -1,6 +1,10 @@
-using StocksPortfolio.Infrastructure.Services;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
+using StocksPortfolio.Application.Interfaces.Collections;
+using StocksPortfolio.Application.Interfaces.Enums;
+using StocksPortfolio.Application.Interfaces.Interfaces;
+using StocksPortfolio.Stocks;
 using System.Text.Json;
 
 namespace StocksPortfolio.Api.Controllers
@@ -9,27 +13,28 @@ namespace StocksPortfolio.Api.Controllers
     [Route("api/[controller]")]
     public class PortfolioController : ControllerBase
     {
-        private readonly DataProviderService _dataService;
+        private readonly ICurrencyService _currencyService;
+        private readonly IPortfolioService _portfolioService;
+        private readonly IMapper _mapper;
 
-        private class Quote
+        public PortfolioController(
+            IPortfolioRepository portfolioRepository,
+            ICurrencyService currencyService,
+            IPortfolioService portfolioService,
+            IMapper mapper
+            )
         {
-            public bool success { get; set; }
-            public string terms { get; set; }
-            public string privacy { get; set; }
-            public int timestamp { get; set; }
-            public string source { get; set; }
-            public Dictionary<string, decimal> quotes { get; set; }
-        }
-
-        public PortfolioController()
-        {
-            _dataService = new DataProviderService();
+            _currencyService = currencyService ?? throw new NullReferenceException(nameof(currencyService));
+            _portfolioService = portfolioService ?? throw new NullReferenceException(nameof(portfolioService));
+            _mapper = mapper ?? throw new NullReferenceException(nameof(mapper));
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            var portfolio = _dataService.GetPortfolio(ObjectId.Parse(id)).Result;
+            var portfolio = _portfolioService.GetPortfolio(id);
+            if (portfolio == null)
+                return BadRequest(ExceptionCodes.portfolioDoesNotExist);
             return Ok(portfolio);
         }
 
