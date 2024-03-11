@@ -8,13 +8,16 @@
   </PropertyGroup>
 	
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StocksPortfolio.Application\StocksPortfolio.Application.csproj" />
     <ProjectReference Include="..\StocksPortfolio.Infrastructure\StocksPortfolio.Infrastructure.csproj" />
-	  <ProjectReference Include="..\StocksPortfolio.Api\StocksPortfolio.Api.csproj" />
-    <ProjectReference Include="..\StocksService\StocksService.csproj" />
+	<ProjectReference Include="..\StocksPortfolio.Api\StocksPortfolio.Api.csproj" />
+    <ProjectReference Include="..\StocksService\StocksPortfolio.Stocks.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,9 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksService", "StocksService\StocksService.csproj", "{38696413-5D4D-4C4F-AE0A-01B3BB6BCC46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Stocks", "StocksService\StocksPortfolio.Stocks.csproj", "{38696413-5D4D-4C4F-AE0A-01B3BB6BCC46}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Api", "StocksPortfolio.Api\StocksPortfolio.Api.csproj", "{CE6E497A-266D-4A63-8B37-C7F16547D784}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DED923E-241D-43AB-A08F-21171B6EC98E} = {7DED923E-241D-43AB-A08F-21171B6EC98E}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Web", "StocksPortfolio.Core\StocksPortfolio.Web.csproj", "{A7BA7161-1A0C-433C-8CEB-94848795E387}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -13,6 +16,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Web", "Stoc
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Infrastructure", "StocksPortfolio.Infrastructure\StocksPortfolio.Infrastructure.csproj", "{9368CB53-892A-4508-A506-3F6D8BF0C28B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DED923E-241D-43AB-A08F-21171B6EC98E} = {7DED923E-241D-43AB-A08F-21171B6EC98E}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksPortfolio.Application.Interfaces", "StocksPortfolio.Application.Interfaces\StocksPortfolio.Application.Interfaces.csproj", "{7DED923E-241D-43AB-A08F-21171B6EC98E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksPortfolio.Application", "StocksPortfolio.Application\StocksPortfolio.Application.csproj", "{7E074923-9FA3-460A-AE68-89A93A5DF154}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7DED923E-241D-43AB-A08F-21171B6EC98E} = {7DED923E-241D-43AB-A08F-21171B6EC98E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +49,14 @@ Global
 		{9368CB53-892A-4508-A506-3F6D8BF0C28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9368CB53-892A-4508-A506-3F6D8BF0C28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9368CB53-892A-4508-A506-3F6D8BF0C28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DED923E-241D-43AB-A08F-21171B6EC98E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DED923E-241D-43AB-A08F-21171B6EC98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DED923E-241D-43AB-A08F-21171B6EC98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DED923E-241D-43AB-A08F-21171B6EC98E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E074923-9FA3-460A-AE68-89A93A5DF154}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E074923-9FA3-460A-AE68-89A93A5DF154}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E074923-9FA3-460A-AE68-89A93A5DF154}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E074923-9FA3-460A-AE68-89A93A5DF154}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
