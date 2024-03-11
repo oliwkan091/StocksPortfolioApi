@@ -13,5 +13,6 @@ namespace StocksPortfolio.Application.Interfaces.Interfaces
     public interface ICurrencyRepository
     {
         CurrencyViewModel GetAll();
+        void Update(CurrencyCollection collectionToUpdate);
     }
 }

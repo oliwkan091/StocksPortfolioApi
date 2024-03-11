@@ -91,5 +91,19 @@ namespace StocksPortfolio.Application.Services
             return totalAmount;
         }
 
+        public void SoftDeleteOnePortfolio(string portfolio)
+        {
+            ObjectId objectId;
+            try
+            {
+                objectId = ObjectId.Parse(portfolio);
+            }
+            catch (FormatException ex)
+            {
+                throw new FormatException(ExceptionCodes.notAValid24String);
+            }
+
+            _portfolioRepository.SoftDeletePortfolio(objectId);
+        }
     }
 }

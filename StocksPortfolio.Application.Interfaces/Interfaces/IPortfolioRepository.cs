@@ -7,5 +7,6 @@ namespace StocksPortfolio.Application.Interfaces.Interfaces
     {
         PortfolioViewModel GetPortfolioByIdThatIsNotSoftDeleted(ObjectId objectId);
         List<PortfolioViewModel> GetAllPortfoliosThatAreNotSoftDeleted();
+        void SoftDeletePortfolio(ObjectId id);
     }
 }

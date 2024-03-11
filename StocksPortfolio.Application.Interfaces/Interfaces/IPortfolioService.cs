@@ -12,5 +12,6 @@ namespace StocksPortfolio.Application.Interfaces.Interfaces
     {
         PortfolioViewModel GetPortfolio(string portfolioId);
         decimal GetTotalPortfolioValue(PortfolioCollection portfolio, string currency, CurrencyViewModel currencyData);
+        void SoftDeleteOnePortfolio(string portfolio);
     }
 }

@@ -1,6 +1,5 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
 using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Enums;
 using StocksPortfolio.Application.Interfaces.Interfaces;
@@ -47,11 +46,10 @@ namespace StocksPortfolio.Api.Controllers
             return Ok(totalAmount);
         }
 
-        [HttpGet("/delete")]
+        [HttpDelete("/delete")]
         public IActionResult DeletePortfolio(string portfolioId)
         {
-            var dataService = new DataProviderService();
-            dataService.DeletePortfolio(ObjectId.Parse(portfolioId));
+            _portfolioService.SoftDeleteOnePortfolio(portfolioId);
             return Ok();
         }
     }
