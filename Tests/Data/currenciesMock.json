@@ -1,0 +1,682 @@
+{
+  "_id": { "$oid": "00227b375dff9218248edfd4" },
+  "timestamp": 1710139937,
+  "quotes": [
+    {
+      "type": "USDAED",
+      "value": 3.672504
+    },
+    {
+      "type": "USDAFN",
+      "value": 71.16858
+    },
+    {
+      "type": "USDALL",
+      "value": 94.929996
+    },
+    {
+      "type": "USDAMD",
+      "value": 401.867714
+    },
+    {
+      "type": "USDANG",
+      "value": 1.800466
+    },
+    {
+      "type": "USDAOA",
+      "value": 835.503981
+    },
+    {
+      "type": "USDARS",
+      "value": 846.897446
+    },
+    {
+      "type": "USDAUD",
+      "value": 1.50515
+    },
+    {
+      "type": "USDAWG",
+      "value": 1.8025
+    },
+    {
+      "type": "USDAZN",
+      "value": 1.70397
+    },
+    {
+      "type": "USDBAM",
+      "value": 1.786853
+    },
+    {
+      "type": "USDBBD",
+      "value": 2.017085
+    },
+    {
+      "type": "USDBDT",
+      "value": 109.643232
+    },
+    {
+      "type": "USDBGN",
+      "value": 1.786853
+    },
+    {
+      "type": "USDBHD",
+      "value": 0.376593
+    },
+    {
+      "type": "USDBIF",
+      "value": 2856.059568
+    },
+    {
+      "type": "USDBMD",
+      "value": 1.0
+    },
+    {
+      "type": "USDBND",
+      "value": 1.330044
+    },
+    {
+      "type": "USDBOB",
+      "value": 6.903294
+    },
+    {
+      "type": "USDBRL",
+      "value": 4.930428
+    },
+    {
+      "type": "USDBSD",
+      "value": 0.999041
+    },
+    {
+      "type": "USDBTC",
+      "value": 1.4559437E-05
+    },
+    {
+      "type": "USDBTN",
+      "value": 82.594674
+    },
+    {
+      "type": "USDBWP",
+      "value": 13.555342
+    },
+    {
+      "type": "USDBYN",
+      "value": 3.269289
+    },
+    {
+      "type": "USDBYR",
+      "value": 19600.0
+    },
+    {
+      "type": "USDBZD",
+      "value": 2.013704
+    },
+    {
+      "type": "USDCAD",
+      "value": 1.35275
+    },
+    {
+      "type": "USDCDF",
+      "value": 2770.000362
+    },
+    {
+      "type": "USDCHF",
+      "value": 0.877741
+    },
+    {
+      "type": "USDCLF",
+      "value": 0.034838
+    },
+    {
+      "type": "USDCLP",
+      "value": 966.406286
+    },
+    {
+      "type": "USDCNY",
+      "value": 7.186204
+    },
+    {
+      "type": "USDCOP",
+      "value": 3911.561829
+    },
+    {
+      "type": "USDCRC",
+      "value": 510.620803
+    },
+    {
+      "type": "USDCUC",
+      "value": 1.0
+    },
+    {
+      "type": "USDCUP",
+      "value": 26.5
+    },
+    {
+      "type": "USDCVE",
+      "value": 100.74003
+    },
+    {
+      "type": "USDCZK",
+      "value": 23.160504
+    },
+    {
+      "type": "USDDJF",
+      "value": 177.899593
+    },
+    {
+      "type": "USDDKK",
+      "value": 6.814404
+    },
+    {
+      "type": "USDDOP",
+      "value": 58.891782
+    },
+    {
+      "type": "USDDZD",
+      "value": 134.55504
+    },
+    {
+      "type": "USDEGP",
+      "value": 49.408433
+    },
+    {
+      "type": "USDERN",
+      "value": 15.0
+    },
+    {
+      "type": "USDETB",
+      "value": 56.709789
+    },
+    {
+      "type": "USDEUR",
+      "value": 0.913704
+    },
+    {
+      "type": "USDFJD",
+      "value": 2.227704
+    },
+    {
+      "type": "USDFKP",
+      "value": 0.778233
+    },
+    {
+      "type": "USDGBP",
+      "value": 0.777726
+    },
+    {
+      "type": "USDGEL",
+      "value": 2.65504
+    },
+    {
+      "type": "USDGGP",
+      "value": 0.778233
+    },
+    {
+      "type": "USDGHS",
+      "value": 12.78699
+    },
+    {
+      "type": "USDGIP",
+      "value": 0.778233
+    },
+    {
+      "type": "USDGMD",
+      "value": 67.92504
+    },
+    {
+      "type": "USDGNF",
+      "value": 8587.090585
+    },
+    {
+      "type": "USDGTQ",
+      "value": 7.802293
+    },
+    {
+      "type": "USDGYD",
+      "value": 209.008268
+    },
+    {
+      "type": "USDHKD",
+      "value": 7.82035
+    },
+    {
+      "type": "USDHNL",
+      "value": 24.670412
+    },
+    {
+      "type": "USDHRK",
+      "value": 7.030095
+    },
+    {
+      "type": "USDHTG",
+      "value": 132.447124
+    },
+    {
+      "type": "USDHUF",
+      "value": 360.630388
+    },
+    {
+      "type": "USDIDR",
+      "value": 15541.3
+    },
+    {
+      "type": "USDILS",
+      "value": 3.574385
+    },
+    {
+      "type": "USDIMP",
+      "value": 0.778233
+    },
+    {
+      "type": "USDINR",
+      "value": 82.75235
+    },
+    {
+      "type": "USDIQD",
+      "value": 1308.665662
+    },
+    {
+      "type": "USDIRR",
+      "value": 42040.000352
+    },
+    {
+      "type": "USDISK",
+      "value": 136.203816
+    },
+    {
+      "type": "USDJEP",
+      "value": 0.778233
+    },
+    {
+      "type": "USDJMD",
+      "value": 155.031748
+    },
+    {
+      "type": "USDJOD",
+      "value": 0.708904
+    },
+    {
+      "type": "USDJPY",
+      "value": 147.06504
+    },
+    {
+      "type": "USDKES",
+      "value": 144.305879
+    },
+    {
+      "type": "USDKGS",
+      "value": 89.430385
+    },
+    {
+      "type": "USDKHR",
+      "value": 4050.979855
+    },
+    {
+      "type": "USDKMF",
+      "value": 449.550384
+    },
+    {
+      "type": "USDKPW",
+      "value": 899.964092
+    },
+    {
+      "type": "USDKRW",
+      "value": 1316.950384
+    },
+    {
+      "type": "USDKWD",
+      "value": 0.30707
+    },
+    {
+      "type": "USDKYD",
+      "value": 0.832488
+    },
+    {
+      "type": "USDKZT",
+      "value": 446.539674
+    },
+    {
+      "type": "USDLAK",
+      "value": 20858.80042
+    },
+    {
+      "type": "USDLBP",
+      "value": 89459.960714
+    },
+    {
+      "type": "USDLKR",
+      "value": 307.158193
+    },
+    {
+      "type": "USDLRD",
+      "value": 192.450382
+    },
+    {
+      "type": "USDLSL",
+      "value": 18.720382
+    },
+    {
+      "type": "USDLTL",
+      "value": 2.95274
+    },
+    {
+      "type": "USDLVL",
+      "value": 0.60489
+    },
+    {
+      "type": "USDLYD",
+      "value": 4.81111
+    },
+    {
+      "type": "USDMAD",
+      "value": 10.012517
+    },
+    {
+      "type": "USDMDL",
+      "value": 17.621854
+    },
+    {
+      "type": "USDMGA",
+      "value": 4496.825179
+    },
+    {
+      "type": "USDMKD",
+      "value": 56.29254
+    },
+    {
+      "type": "USDMMK",
+      "value": 2097.848431
+    },
+    {
+      "type": "USDMNT",
+      "value": 3391.254025
+    },
+    {
+      "type": "USDMOP",
+      "value": 8.047508
+    },
+    {
+      "type": "USDMRU",
+      "value": 39.915039
+    },
+    {
+      "type": "USDMUR",
+      "value": 45.750379
+    },
+    {
+      "type": "USDMVR",
+      "value": 15.403741
+    },
+    {
+      "type": "USDMWK",
+      "value": 1681.695674
+    },
+    {
+      "type": "USDMXN",
+      "value": 16.799655
+    },
+    {
+      "type": "USDMYR",
+      "value": 4.685039
+    },
+    {
+      "type": "USDMZN",
+      "value": 63.503732
+    },
+    {
+      "type": "USDNAD",
+      "value": 18.720377
+    },
+    {
+      "type": "USDNGN",
+      "value": 1594.340377
+    },
+    {
+      "type": "USDNIO",
+      "value": 36.763967
+    },
+    {
+      "type": "USDNOK",
+      "value": 10.404105
+    },
+    {
+      "type": "USDNPR",
+      "value": 132.151112
+    },
+    {
+      "type": "USDNZD",
+      "value": 1.619434
+    },
+    {
+      "type": "USDOMR",
+      "value": 0.38495
+    },
+    {
+      "type": "USDPAB",
+      "value": 0.999041
+    },
+    {
+      "type": "USDPEN",
+      "value": 3.707186
+    },
+    {
+      "type": "USDPGK",
+      "value": 3.814353
+    },
+    {
+      "type": "USDPHP",
+      "value": 55.580375
+    },
+    {
+      "type": "USDPKR",
+      "value": 278.919465
+    },
+    {
+      "type": "USDPLN",
+      "value": 3.931424
+    },
+    {
+      "type": "USDPYG",
+      "value": 7273.308666
+    },
+    {
+      "type": "USDQAR",
+      "value": 3.64125
+    },
+    {
+      "type": "USDRON",
+      "value": 4.540374
+    },
+    {
+      "type": "USDRSD",
+      "value": 107.073226
+    },
+    {
+      "type": "USDRUB",
+      "value": 90.950373
+    },
+    {
+      "type": "USDRWF",
+      "value": 1289.022886
+    },
+    {
+      "type": "USDSAR",
+      "value": 3.750654
+    },
+    {
+      "type": "USDSBD",
+      "value": 8.457605
+    },
+    {
+      "type": "USDSCR",
+      "value": 13.635284
+    },
+    {
+      "type": "USDSDG",
+      "value": 602.00034
+    },
+    {
+      "type": "USDSEK",
+      "value": 10.331325
+    },
+    {
+      "type": "USDSGD",
+      "value": 1.333404
+    },
+    {
+      "type": "USDSHP",
+      "value": 0.777904
+    },
+    {
+      "type": "USDSLE",
+      "value": 22.495973
+    },
+    {
+      "type": "USDSLL",
+      "value": 22495.972698
+    },
+    {
+      "type": "USDSOS",
+      "value": 571.503664
+    },
+    {
+      "type": "USDSRD",
+      "value": 35.485038
+    },
+    {
+      "type": "USDSTD",
+      "value": 20697.981008
+    },
+    {
+      "type": "USDSVC",
+      "value": 8.741492
+    },
+    {
+      "type": "USDSYP",
+      "value": 13001.826734
+    },
+    {
+      "type": "USDSZL",
+      "value": 18.623178
+    },
+    {
+      "type": "USDTHB",
+      "value": 35.370369
+    },
+    {
+      "type": "USDTJS",
+      "value": 10.939016
+    },
+    {
+      "type": "USDTMT",
+      "value": 3.51
+    },
+    {
+      "type": "USDTND",
+      "value": 3.094038
+    },
+    {
+      "type": "USDTOP",
+      "value": 2.358104
+    },
+    {
+      "type": "USDTRY",
+      "value": 31.850368
+    },
+    {
+      "type": "USDTTD",
+      "value": 6.781782
+    },
+    {
+      "type": "USDTWD",
+      "value": 31.448038
+    },
+    {
+      "type": "USDTZS",
+      "value": 2547.439587
+    },
+    {
+      "type": "USDUAH",
+      "value": 38.180988
+    },
+    {
+      "type": "USDUGX",
+      "value": 3901.14659
+    },
+    {
+      "type": "USDUYU",
+      "value": 38.938377
+    },
+    {
+      "type": "USDUZS",
+      "value": 12490.978027
+    },
+    {
+      "type": "USDVEF",
+      "value": 3.60895335823E+06
+    },
+    {
+      "type": "USDVES",
+      "value": 36.145087
+    },
+    {
+      "type": "USDVND",
+      "value": 24655.0
+    },
+    {
+      "type": "USDVUV",
+      "value": 119.506948
+    },
+    {
+      "type": "USDWST",
+      "value": 2.726481
+    },
+    {
+      "type": "USDXAF",
+      "value": 599.293774
+    },
+    {
+      "type": "USDXAG",
+      "value": 0.041134
+    },
+    {
+      "type": "USDXAU",
+      "value": 0.000459
+    },
+    {
+      "type": "USDXCD",
+      "value": 2.70255
+    },
+    {
+      "type": "USDXDR",
+      "value": 0.753004
+    },
+    {
+      "type": "USDXOF",
+      "value": 599.293774
+    },
+    {
+      "type": "USDXPF",
+      "value": 109.650364
+    },
+    {
+      "type": "USDYER",
+      "value": 250.350363
+    },
+    {
+      "type": "USDZAR",
+      "value": 18.677325
+    },
+    {
+      "type": "USDZMK",
+      "value": 9001.203589
+    },
+    {
+      "type": "USDZMW",
+      "value": 24.141428
+    },
+    {
+      "type": "USDZWL",
+      "value": 321.999592
+    }
+  ]
+}
