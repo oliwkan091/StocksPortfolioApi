@@ -1,4 +1,4 @@
-﻿namespace StocksService
+﻿namespace StocksPortfolio.Stocks
 {
     public interface IStocksService
     {
