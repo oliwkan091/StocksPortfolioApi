@@ -32,42 +32,17 @@ namespace StocksPortfolio.Application.Services
             if (currenciesData == null || DateTimeOffset.FromUnixTimeSeconds(currenciesData.Timestamp).LocalDateTime < DateTime.Now.AddDays(-1))
             {
                 var response = await _httpClient.GetAsync("");
-                // Docs: https://currencylayer.com/documentation
-                //There was problem to use api so in case it do not work below workaround is being used
-                //{
-                //    "success": false,
-                //    "error": {
-                //    "code": 104,
-                //    "info": "Your monthly usage limit has been reached. Please upgrade your Subscription Plan."
-                //    }
-                //}
 
                 var data = JsonSerializer.DeserializeAsync<CurrencyExchangeResponseViewModel>(response.Content.ReadAsStream()).Result;
 
-                if(data?.Quotes == null)
-                {
-                    wasUpdated = false;
-                    data = new CurrencyExchangeResponseViewModel()
-                    {
-                        Success = true,
-                        Terms = "Your terms here",
-                        Privacy = "Your privacy policy here",
-                        Timestamp = 0,
-                        Source = "Your source here",
-                        Quotes = CurrencyExchangeContext.quotes
-                    };
-                }else
+                if (data != null && data.Quotes != null)
                 {
                     wasUpdated = true;
+                    data.Timestamp = (int)(((DateTimeOffset)DateTime.Now).ToUnixTimeSeconds());
+                    var dataToUpdate = _mapper.Map<CurrencyExchangeResponseViewModel, CurrencyCollection>(data);
+                    dataToUpdate.Id = currenciesData != null ? currenciesData.Id : ObjectId.GenerateNewId();
+                    _currencyRepository.Update(dataToUpdate);
                 }
-
-                if (data == null || data.Quotes == null)
-                    throw new NullReferenceException(ExceptionCodes.currencyDoesNotExist);
-
-                data.Timestamp = (int)(((DateTimeOffset)DateTime.Now).ToUnixTimeSeconds());
-                var dataToUpdate = _mapper.Map<CurrencyExchangeResponseViewModel, CurrencyCollection>(data);
-                dataToUpdate.Id = currenciesData != null ? currenciesData.Id : ObjectId.GenerateNewId(); 
-                _currencyRepository.Update(dataToUpdate);
             }
 
             return wasUpdated;
