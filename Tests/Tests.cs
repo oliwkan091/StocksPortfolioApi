@@ -123,11 +123,14 @@ namespace Tests
         [InlineData("00227b375dff9218248eadc6", false, 5, "ADR")]
         public async void CheckIfPortfolioRepositoryGetPortfolioByIdThatIsNotSoftDeletedReturnsCorrectObject(string id, bool isDeleted, int numberOfStocks, string firstTicker)
         {
+            //Arrange
             var objectId = ObjectId.Parse(id);
             _portfolioRepository.Setup(x => x.GetPortfolioByIdThatIsNotSoftDeleted(ObjectId.Parse(id))).Returns(portfolioSample);
 
+            //Act
             var result = _portfolioRepositoryObj.GetPortfolioByIdThatIsNotSoftDeleted(ObjectId.Parse(id));
 
+            //Assert
             Assert.Equal(result.Id, objectId);
             Assert.Equal(result.IsDeleted, isDeleted);
             Assert.Equal(result.Stocks.Count(), numberOfStocks);
@@ -138,12 +141,15 @@ namespace Tests
         [InlineData("00227b375dff9218248eadc4")]
         public async void CheckIfPortfolioServiceGetPortfolioThrowsErrorWhenIdDoNotExist(string id)
         {
+            //Arrange
             var objectId = ObjectId.Parse(id);
             _portfolioService.Setup(x => x.GetPortfolio(id)).Throws(new NullReferenceException(ExceptionCodes.portfolioDoesNotExist));
             _portfolioRepository.Setup(x => x.GetPortfolioByIdThatIsNotSoftDeleted(objectId)).Returns(portfolioSample);
 
+            //Act
             var result = _portfolioRepositoryObj.GetPortfolioByIdThatIsNotSoftDeleted(objectId);
 
+            //Assert
             Assert.ThrowsAsync<NullReferenceException>(() => throw new NullReferenceException(ExceptionCodes.portfolioDoesNotExist));
         }
 
@@ -151,16 +157,20 @@ namespace Tests
         [InlineData(2)]
         public async void CheckIfMethodReturnsOnlyDocumnetsWithFieldIsDeletedAsFalse(int numberOfElements)
         {
+            //Arrange
             _portfolioRepository.Setup(x => x.GetAllPortfoliosThatAreNotSoftDeleted()).Returns(portfolioSampleList);
+            //Act
             var result = _portfolioRepositoryObj.GetAllPortfoliosThatAreNotSoftDeleted();
+            //Assert
             Assert.Equal(result.Count(), numberOfElements);
         }
 
 
         [Theory]
         [InlineData("00227b375dff9218248eadc4", Currencies.Usd, 20270)]
-        public async void checkIfTotalValueIsCorrectlyAdded(string portfolioId, string currency, int value)
+        public async void CheckIfTotalValueIsCorrectlyAdded(string portfolioId, string currency, int value)
         {
+            //Arrange
             var objectId = ObjectId.Parse(portfolioId);
             _stocksService.Setup(x => x.GetStockPrice(It.IsAny<string>())).ReturnsAsync(stockModel);
             _currencyRepository.Setup(x => x.GetAll()).Returns(currencyViewModel);
@@ -170,12 +180,13 @@ namespace Tests
             var portfolioViewModelMock = _mapper.Map<PortfolioViewModel, PortfolioCollection>(portfolioSample);
             _portfolioService.Setup(x => x.GetTotalPortfolioValue(portfolioViewModelMock, currency, currencyViewModel)).ReturnsAsync(new decimal(1));
 
-
+            //Act
             var portfolio =  _portfolioServiceObj.GetPortfolio(portfolioId);
             var currencyData = _currencyServiceObj.GetCurrencyExchangeData();
             var portfolioViewModel = _mapper.Map<PortfolioViewModel, PortfolioCollection>(portfolio);
             var totalAmount =  await _portfolioServiceObj.GetTotalPortfolioValue(portfolioViewModel, currency, currencyData);
 
+            //Assert
             Assert.Equal(totalAmount, value);
         }
     }
