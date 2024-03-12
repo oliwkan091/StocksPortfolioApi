@@ -1,24 +1,22 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
 using Moq;
-using StocksPortfolio.Api.Controllers;
 using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Enums;
 using StocksPortfolio.Application.Interfaces.Interfaces;
 using StocksPortfolio.Application.Interfaces.Models;
 using StocksPortfolio.Application.MappingProfile;
 using StocksPortfolio.Application.Services;
-using StocksPortfolio.Infrastructure.Services;
+using StocksPortfolio.Infrastructure.Repositories;
 using StocksPortfolio.Stocks;
 
 namespace Tests
 {
-    public class UnitTest1
+    public class Tests
     {
         private readonly IMapper _mapper;
 
@@ -66,7 +64,7 @@ namespace Tests
             Currency = ""
         };
 
-        public UnitTest1()
+        public Tests()
         {
 
             var builder = WebApplication.CreateBuilder();
