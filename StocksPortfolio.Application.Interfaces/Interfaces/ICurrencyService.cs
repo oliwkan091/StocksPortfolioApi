@@ -1,5 +1,4 @@
-﻿using StocksPortfolio.Application.Interfaces.Collections;
-using StocksPortfolio.Application.Interfaces.Models;
+﻿using StocksPortfolio.Application.Interfaces.Models;
 
 namespace StocksPortfolio.Application.Interfaces.Interfaces
 {

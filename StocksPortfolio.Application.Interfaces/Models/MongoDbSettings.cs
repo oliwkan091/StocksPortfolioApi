@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StocksPortfolio.Application.Interfaces.Models
+﻿namespace StocksPortfolio.Application.Interfaces.Models
 {
     public class MongoDbSettings
     {

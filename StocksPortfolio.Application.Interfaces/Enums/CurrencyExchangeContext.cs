@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace StocksPortfolio.Application.Interfaces.Enums
+﻿namespace StocksPortfolio.Application.Interfaces.Enums
 {
     //For tests only if case api to download currency exchange do not work
     public static class CurrencyExchangeContext

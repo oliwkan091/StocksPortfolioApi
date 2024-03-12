@@ -1,7 +1,5 @@
 {
-  "_id": {
-    "$oid": "50227b375dff9218248eadc4"
-  },
+  "_id": { "$oid": "50227b375dff9218248eadc4" },
   "totalValue": 0,
   "isDeleted": false,
   "stocks": [
@@ -31,45 +29,8 @@
       "numberOfShares": 1100
     }
   ]
-}
-{
-  "_id": {
-    "$oid": "50227b375dff9218248eadc5"
-  },
-  "totalValue": 0,
-  "isDeleted": false,
-  "stocks": [
-    {
-      "ticker": "AAPL",
-      "currency": "USD",
-      "numberOfShares": 2080
-    },
-    {
-      "ticker": "TSLA",
-      "currency": "USD",
-      "numberOfShares": 6700
-    },
-    {
-      "ticker": "NVDA",
-      "currency": "USD",
-      "numberOfShares": 50
-    },
-    {
-      "ticker": "ALLEGRO",
-      "currency": "PLN",
-      "numberOfShares": 100
-    },
-    {
-      "ticker": "ADR",
-      "currency": "JPY",
-      "numberOfShares": 20000
-    }
-  ]
-}
-{
-  "_id": {
-    "$oid": "50227b375dff9218248eadc6"
-  },
+} {
+  "_id": { "$oid": "50227b375dff9218248eadc6" },
   "totalValue": 0,
   "isDeleted": false,
   "stocks": [
@@ -97,6 +58,37 @@
       "ticker": "ADR",
       "currency": "JPY",
       "numberOfShares": 500
+    }
+  ]
+} {
+  "_id": { "$oid": "50227b375dff9218248eadc5" },
+  "totalValue": 0,
+  "isDeleted": false,
+  "stocks": [
+    {
+      "ticker": "AAPL",
+      "currency": "USD",
+      "numberOfShares": 2080
+    },
+    {
+      "ticker": "TSLA",
+      "currency": "USD",
+      "numberOfShares": 6700
+    },
+    {
+      "ticker": "NVDA",
+      "currency": "USD",
+      "numberOfShares": 50
+    },
+    {
+      "ticker": "ALLEGRO",
+      "currency": "PLN",
+      "numberOfShares": 100
+    },
+    {
+      "ticker": "ADR",
+      "currency": "JPY",
+      "numberOfShares": 20000
     }
   ]
 }

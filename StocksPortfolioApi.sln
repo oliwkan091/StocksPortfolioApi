@@ -12,6 +12,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Api", "Stoc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Web", "StocksPortfolio.Core\StocksPortfolio.Web.csproj", "{A7BA7161-1A0C-433C-8CEB-94848795E387}"
 	ProjectSection(ProjectDependencies) = postProject
+		{5FD9A333-690D-4078-991F-EA84DA9A1CD9} = {5FD9A333-690D-4078-991F-EA84DA9A1CD9}
+		{7DED923E-241D-43AB-A08F-21171B6EC98E} = {7DED923E-241D-43AB-A08F-21171B6EC98E}
 		{CE6E497A-266D-4A63-8B37-C7F16547D784} = {CE6E497A-266D-4A63-8B37-C7F16547D784}
 	EndProjectSection
 EndProject
@@ -20,10 +22,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Infrastruct
 		{7DED923E-241D-43AB-A08F-21171B6EC98E} = {7DED923E-241D-43AB-A08F-21171B6EC98E}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksPortfolio.Application.Interfaces", "StocksPortfolio.Application.Interfaces\StocksPortfolio.Application.Interfaces.csproj", "{7DED923E-241D-43AB-A08F-21171B6EC98E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Application.Interfaces", "StocksPortfolio.Application.Interfaces\StocksPortfolio.Application.Interfaces.csproj", "{7DED923E-241D-43AB-A08F-21171B6EC98E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksPortfolio.Application", "StocksPortfolio.Application\StocksPortfolio.Application.csproj", "{7E074923-9FA3-460A-AE68-89A93A5DF154}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StocksPortfolio.Application", "StocksPortfolio.Application\StocksPortfolio.Application.csproj", "{7E074923-9FA3-460A-AE68-89A93A5DF154}"
 	ProjectSection(ProjectDependencies) = postProject
+		{7DED923E-241D-43AB-A08F-21171B6EC98E} = {7DED923E-241D-43AB-A08F-21171B6EC98E}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{5FD9A333-690D-4078-991F-EA84DA9A1CD9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{38696413-5D4D-4C4F-AE0A-01B3BB6BCC46} = {38696413-5D4D-4C4F-AE0A-01B3BB6BCC46}
 		{7DED923E-241D-43AB-A08F-21171B6EC98E} = {7DED923E-241D-43AB-A08F-21171B6EC98E}
 	EndProjectSection
 EndProject
@@ -57,6 +65,10 @@ Global
 		{7E074923-9FA3-460A-AE68-89A93A5DF154}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E074923-9FA3-460A-AE68-89A93A5DF154}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E074923-9FA3-460A-AE68-89A93A5DF154}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FD9A333-690D-4078-991F-EA84DA9A1CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD9A333-690D-4078-991F-EA84DA9A1CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD9A333-690D-4078-991F-EA84DA9A1CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD9A333-690D-4078-991F-EA84DA9A1CD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

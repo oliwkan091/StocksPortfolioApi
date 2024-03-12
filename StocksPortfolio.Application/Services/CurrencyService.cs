@@ -4,10 +4,6 @@ using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Enums;
 using StocksPortfolio.Application.Interfaces.Interfaces;
 using StocksPortfolio.Application.Interfaces.Models;
-using StocksPortfolio.Stocks;
-using System.Data;
-using System.Net.Http;
-using System.Security.Cryptography.X509Certificates;
 using System.Text.Json;
 
 namespace StocksPortfolio.Application.Services

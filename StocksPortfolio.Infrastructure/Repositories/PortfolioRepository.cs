@@ -7,18 +7,20 @@ using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Enums;
 using StocksPortfolio.Application.Interfaces.Interfaces;
 using StocksPortfolio.Application.Interfaces.Models;
-using System.Reflection;
 
-namespace StocksPortfolio.Infrastructure.Services
+namespace StocksPortfolio.Infrastructure.Repositories
 {
-    public class PortfolioRepository: IPortfolioRepository
+    public class PortfolioRepository : IPortfolioRepository
     {
         private readonly MongoDbRunner _runner;
         private IMongoCollection<PortfolioCollection> _portfolioCollection;
         private readonly IOptions<MongoDbSettings> _mongoDbSettings;
         private readonly IMapper _mapper;
 
-        public PortfolioRepository(IOptions<MongoDbSettings> mongoDbSettings, IMapper mapper)
+        public PortfolioRepository(
+            IOptions<MongoDbSettings> mongoDbSettings,
+            IMapper mapper
+            )
         {
             _mongoDbSettings = mongoDbSettings ?? throw new NullReferenceException(nameof(mongoDbSettings));
             _mapper = mapper ?? throw new NullReferenceException(nameof(mapper));
@@ -32,14 +34,15 @@ namespace StocksPortfolio.Infrastructure.Services
 
         public PortfolioViewModel GetPortfolioByIdThatIsNotSoftDeleted(ObjectId objectId)
         {
-            var portfolioCollection = _portfolioCollection.Find(portfolio => (portfolio.Id == objectId && portfolio.IsDeleted == false)).SingleOrDefault();
+            var portfolioCollection = _portfolioCollection.Find(portfolio => portfolio.Id == objectId && portfolio.IsDeleted == false).SingleOrDefault();
             return _mapper.Map<PortfolioCollection, PortfolioViewModel>(portfolioCollection);
         }
 
         public List<PortfolioViewModel> GetAllPortfoliosThatAreNotSoftDeleted()
         {
             var portfolioCollectionList = _portfolioCollection.Find(portfolio => portfolio.IsDeleted == false).ToList();
-            return _mapper.Map<List<PortfolioCollection>, List<PortfolioViewModel>>(portfolioCollectionList);
+            var a = _mapper.Map<List<PortfolioCollection>, List<PortfolioViewModel>>(portfolioCollectionList);
+            return a;
         }
 
         public void SoftDeletePortfolio(ObjectId id)

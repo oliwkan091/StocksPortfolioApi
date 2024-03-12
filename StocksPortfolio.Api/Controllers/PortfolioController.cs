@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Enums;
 using StocksPortfolio.Application.Interfaces.Interfaces;
+using StocksPortfolio.Application.Interfaces.Models;
 
 namespace StocksPortfolio.Api.Controllers
 {
@@ -15,7 +16,6 @@ namespace StocksPortfolio.Api.Controllers
         private readonly IMapper _mapper;
 
         public PortfolioController(
-            IPortfolioRepository portfolioRepository,
             ICurrencyService currencyService,
             IPortfolioService portfolioService,
             IMapper mapper
@@ -42,7 +42,7 @@ namespace StocksPortfolio.Api.Controllers
             await _currencyService.UpdateCurrentCurrencyExchangeData();
             var currencyData = _currencyService.GetCurrencyExchangeData();
             var portfolioViewModel = _mapper.Map<PortfolioViewModel, PortfolioCollection>(portfolio);
-            var totalAmount = _portfolioService.GetTotalPortfolioValue(portfolioViewModel, currency, currencyData);
+            var totalAmount = await _portfolioService.GetTotalPortfolioValue(portfolioViewModel, currency, currencyData);
             return Ok(totalAmount);
         }
 
