@@ -27,7 +27,7 @@ var configuration = builder.Configuration;
 
 builder.Services.AddHttpClient("currencyExchangeApi", client =>
 {
-    client.BaseAddress = new Uri($"{configuration["currencyExchangeUrl"]}live?access_key={configuration["currencyExchangeUrl"]}"); 
+    client.BaseAddress = new Uri($"{configuration["currencyExchangeUrl"]}live?access_key={configuration["apiAccessKey"]}"); 
 });
 
 BsonClassMap.RegisterClassMap<CurrencyCollection>(cm =>
