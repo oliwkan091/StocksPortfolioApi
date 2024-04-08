@@ -13,9 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StocksPortfolio.Application\StocksPortfolio.Application.csproj" />
-    <ProjectReference Include="..\StocksPortfolio.Infrastructure\StocksPortfolio.Infrastructure.csproj" />
-	<ProjectReference Include="..\StocksPortfolio.Api\StocksPortfolio.Api.csproj" />
+    <ProjectReference Include="..\StocksPortfolio.Application\Application.csproj" />
+    <ProjectReference Include="..\StocksPortfolio.Infrastructure\Infrastructure.csproj" />
+	<ProjectReference Include="..\StocksPortfolio.Api\WebApi.csproj" />
     <ProjectReference Include="..\StocksService\StocksService.csproj" />
   </ItemGroup>
 
