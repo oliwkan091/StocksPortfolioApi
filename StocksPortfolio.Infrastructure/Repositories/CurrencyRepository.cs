@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Domain;
+using Domain.Collections;
 using Domain.Repositories;
 using Microsoft.Extensions.Options;
 using Mongo2Go;

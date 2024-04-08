@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using Domain.Collections;
 using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Models;
 

@@ -1,6 +1,6 @@
-﻿using MongoDB.Bson;
+﻿using Domain.Collections;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using StocksPortfolio.Application.Interfaces.Models;
 
 namespace StocksPortfolio.Application.Interfaces.Collections
 {

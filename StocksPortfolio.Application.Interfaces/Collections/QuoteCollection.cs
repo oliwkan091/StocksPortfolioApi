@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace StocksPortfolio.Application.Interfaces.Models
+namespace Domain.Collections
 {
     public class Quote
     {
