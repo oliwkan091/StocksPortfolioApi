@@ -33,9 +33,9 @@
     <PackageReference Include="Mongo2Go" Version="3.1.3" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
-    <ProjectReference Include="..\StocksPortfolio.Api\StocksPortfolio.Api.csproj" />
-	<ProjectReference Include="..\StocksPortfolio.Application.Interfaces\StocksPortfolio.Application.Interfaces.csproj" />
-	<ProjectReference Include="..\StocksPortfolio.Application\StocksPortfolio.Application.csproj" />
+    <ProjectReference Include="..\StocksPortfolio.Api\WebApi.csproj" />
+	<ProjectReference Include="..\StocksPortfolio.Application.Interfaces\Domain.csproj" />
+	<ProjectReference Include="..\StocksPortfolio.Application\Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
