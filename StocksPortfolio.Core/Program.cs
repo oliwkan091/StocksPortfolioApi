@@ -1,8 +1,9 @@
 using AutoMapper;
+using Domain;
+using Domain.Repositories;
 using MongoDB.Bson.Serialization;
 using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Interfaces;
-using StocksPortfolio.Application.Interfaces.Models;
 using StocksPortfolio.Application.MappingProfile;
 using StocksPortfolio.Application.Services;
 using StocksPortfolio.Infrastructure.Repositories;

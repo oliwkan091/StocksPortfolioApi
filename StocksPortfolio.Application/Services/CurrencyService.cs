@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Domain.Repositories;
 using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using StocksPortfolio.Application.Interfaces.Collections;

@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson;
 using StocksPortfolio.Application.Interfaces.Models;
 
-namespace StocksPortfolio.Application.Interfaces.Interfaces
+namespace Domain.Repositories
 {
     public interface IPortfolioRepository
     {

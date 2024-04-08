@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
+using Domain;
+using Domain.Repositories;
 using Microsoft.Extensions.Options;
 using Mongo2Go;
 using MongoDB.Driver;
 using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Enums;
-using StocksPortfolio.Application.Interfaces.Interfaces;
 using StocksPortfolio.Application.Interfaces.Models;
 
 namespace StocksPortfolio.Infrastructure.Repositories

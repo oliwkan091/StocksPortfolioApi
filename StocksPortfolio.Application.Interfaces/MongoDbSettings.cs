@@ -1,4 +1,4 @@
-﻿namespace StocksPortfolio.Application.Interfaces.Models
+﻿namespace Domain
 {
     public class MongoDbSettings
     {

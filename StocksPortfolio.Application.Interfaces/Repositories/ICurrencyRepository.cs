@@ -1,7 +1,7 @@
 ﻿using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Models;
 
-namespace StocksPortfolio.Application.Interfaces.Interfaces
+namespace Domain.Repositories
 {
     public interface ICurrencyRepository
     {

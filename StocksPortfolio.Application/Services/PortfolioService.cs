@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Domain.Repositories;
 using MongoDB.Bson;
 using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Enums;
