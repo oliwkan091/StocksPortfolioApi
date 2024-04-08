@@ -1,0 +1,15 @@
+Podsyłam krótkie podsumowanie Twojego zadania.
+
+Na plus:
+•	+ warunki zadania spełnione, za wyjątkiem nieruszania StocksService
+•	+ endpointy poprawione
+•	+ logika wydzielona do serwisów
+•	+ testy dodane
+•	+ konfiguracja przeniesiona do appsettings
+Do poprawy:
+•	+/- dodany AutoMapper, ale wprowadza niepotrzebnie złożoność
+•	- dane testowe zaharcodowane jako plik .cs
+•	- zmieszane modele z różnych miejsc, nieprawidłowo rozdzielone i czasem też źle nazwane
+•	- przekombinowany układ projektu, niepotrzebne rozdrobnienie
+•	- jako base URL do API ustawiony cały endpoint
+•	- zmodyfikowany StocksService, a było napisane w instrukcji, że nie podlega modyfikacjom
