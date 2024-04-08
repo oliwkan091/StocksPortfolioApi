@@ -5,8 +5,6 @@ using StocksPortfolio.Application.Interfaces.Enums;
 using StocksPortfolio.Application.Interfaces.Interfaces;
 using StocksPortfolio.Application.Interfaces.Models;
 using StocksPortfolio.Stocks;
-using System.Net.Http.Headers;
-using System.Text.Json;
 
 namespace StocksPortfolio.Application.Services
 {

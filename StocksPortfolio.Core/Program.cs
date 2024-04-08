@@ -27,7 +27,10 @@ var configuration = builder.Configuration;
 
 builder.Services.AddHttpClient("currencyExchangeApi", client =>
 {
-    client.BaseAddress = new Uri($"{configuration["currencyExchangeUrl"]}live?access_key={configuration["apiAccessKey"]}"); 
+    // Previous endpoint fully declared here. Now only base fragment is here rest in the service.
+    // This do not make any sense because it is always used this way and there is no exact base fragemnt 
+    //client.BaseAddress = new Uri($"{configuration["currencyExchangeUrl"]}live?access_key={configuration["apiAccessKey"]}"); 
+    client.BaseAddress = new Uri(configuration["currencyExchangeUrl"]); 
 });
 
 BsonClassMap.RegisterClassMap<CurrencyCollection>(cm =>

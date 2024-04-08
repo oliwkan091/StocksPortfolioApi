@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using MongoDB.Bson;
 using StocksPortfolio.Application.Interfaces.Collections;
 using StocksPortfolio.Application.Interfaces.Enums;
@@ -13,16 +14,19 @@ namespace StocksPortfolio.Application.Services
         private readonly ICurrencyRepository _currencyRepository;
         private readonly IMapper _mapper;
         private readonly HttpClient _httpClient;
+        private readonly IConfiguration _configuration;
 
         public CurrencyService(
             ICurrencyRepository currencyRepository,
             IMapper mapper,
-            IHttpClientFactory httpClientFactory
+            IHttpClientFactory httpClientFactory,
+            IConfiguration configuration
             )
         {
             _currencyRepository = currencyRepository ?? throw new NullReferenceException(nameof(currencyRepository));
             _mapper = mapper ?? throw new NullReferenceException(nameof(mapper));
             _httpClient = httpClientFactory.CreateClient("currencyExchangeApi");
+            _configuration = configuration ?? throw new NullReferenceException(nameof(configuration));
         }
 
         public async Task<bool> UpdateCurrentCurrencyExchangeData()
@@ -31,7 +35,8 @@ namespace StocksPortfolio.Application.Services
             var currenciesData = _currencyRepository.GetAll();
             if (currenciesData == null || DateTimeOffset.FromUnixTimeSeconds(currenciesData.Timestamp).LocalDateTime < DateTime.Now.AddDays(-1))
             {
-                var response = await _httpClient.GetAsync("");
+                var url = $"live?access_key={_configuration["apiAccessKey"]}";
+                var response = await _httpClient.GetAsync(url);
 
                 var data = JsonSerializer.DeserializeAsync<CurrencyExchangeResponseViewModel>(response.Content.ReadAsStream()).Result;
 
