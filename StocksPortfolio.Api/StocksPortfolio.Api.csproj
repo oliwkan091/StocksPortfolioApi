@@ -13,7 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\StocksPortfolio.Application.Interfaces\StocksPortfolio.Application.Interfaces.csproj" />
     <ProjectReference Include="..\StocksPortfolio.Infrastructure\StocksPortfolio.Infrastructure.csproj" />
-    <ProjectReference Include="..\StocksService\StocksPortfolio.Stocks.csproj" />
+    <ProjectReference Include="..\StocksService\StocksService.csproj" />
   </ItemGroup>
 
 </Project>
