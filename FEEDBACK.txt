@@ -8,11 +8,12 @@ Na plus:
 •	+ konfiguracja przeniesiona do appsettings
 Do poprawy:
 •	+/- dodany AutoMapper, ale wprowadza niepotrzebnie złożoność
-•	- dane testowe zaharcodowane jako plik .cs
-•	- zmieszane modele z różnych miejsc, nieprawidłowo rozdzielone i czasem też źle nazwane
+•	-x dane testowe zaharcodowane jako plik .cs
+•	-x zmieszane modele z różnych miejsc, nieprawidłowo rozdzielone i czasem też źle nazwane
 •	-x przekombinowany układ projektu, niepotrzebne rozdrobnienie
 		Tu chyba chodzi o to że projekt zostało podzielony na dużą ilość podprojektów których mógł nie 
 		   wymagać w obecnej formia ale mógł ich wymagać w formie dalszego rozwoju, więc i tak by zostały dodane.
-		   Do tego taka opcja jak dla mnie zwiększa czytelność
+		   Do tego taka opcja jak dla mnie zwiększa czytelność.
+		   Jedyne co można to zmienić nazwy na takie idealnie pasujące do np clean architecture
 •	-x jako base URL do API ustawiony cały endpoint
 •	-x zmodyfikowany StocksService, a było napisane w instrukcji, że nie podlega modyfikacjom
