@@ -30,7 +30,7 @@ namespace StocksPortfolio.Infrastructure.Repositories
             _runner.Import(mongoDbSettings.Value.CurrencyName, mongoDbSettings.Value.CurrencyCollectionName, Path.Combine(mongoDbSettings.Value.CurrencyConnectionString), true);
             var client = new MongoClient(_runner.ConnectionString);
 
-            var db = client.GetDatabase(mongoDbSettings.Value.CurrencyName); ;
+            var db = client.GetDatabase(mongoDbSettings.Value.CurrencyName);
 
             _currencyCollection = db.GetCollection<CurrencyCollection>(
                 mongoDbSettings.Value.CurrencyCollectionName);
