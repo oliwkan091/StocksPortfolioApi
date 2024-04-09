@@ -46,9 +46,6 @@ namespace Tests
                 client.BaseAddress = new Uri(configuration["currencyExchangeUrl"]);
             });
 
-            var serviceProvider = builder.Services.BuildServiceProvider();
-            var httpClientFactory = serviceProvider.GetRequiredService<IHttpClientFactory>();
-
             var mapperConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new MappingProfile());
@@ -59,10 +56,10 @@ namespace Tests
             builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection("MongoDB"));
 
             var app = builder.Build();
-            var serviceProvider2 = app.Services;
-            var mongoDbSettings = serviceProvider2.GetRequiredService<IOptions<MongoDbSettings>>().Value;
-
+            var serviceProvider = app.Services;
+            var mongoDbSettings = serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value;
             IOptions<MongoDbSettings> optionsMongoDbSettings = Options.Create(mongoDbSettings);
+            var httpClientFactory = serviceProvider.GetRequiredService<IHttpClientFactory>();
 
             _portfolioRepositoryObj = new PortfolioRepository(optionsMongoDbSettings, _mapper);
             _currencyRepositoryObj = new CurrencyRepository(optionsMongoDbSettings, _mapper);
